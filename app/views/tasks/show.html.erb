@@ -1,0 +1,65 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Task type:</b>
+  <%= @task.task_type %>
+</p>
+
+<p>
+  <b>System:</b>
+  <%= @task.system %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @task.description %>
+</p>
+
+<p>
+  <b>Request date:</b>
+  <%= @task.request_date %>
+</p>
+
+<p>
+  <b>Due date:</b>
+  <%= @task.due_date %>
+</p>
+
+<p>
+  <b>Execution date:</b>
+  <%= @task.execution_date %>
+</p>
+
+<p>
+  <b>Assigned to:</b>
+  <%= @task.assigned_to %>
+</p>
+
+<p>
+  <b>Customer:</b>
+  <%= @task.customer %>
+</p>
+
+<p>
+  <b>Follow up:</b>
+  <%= @task.follow_up %>
+</p>
+
+<p>
+  <b>Task priority:</b>
+  <%= @task.task_priority %>
+</p>
+
+<p>
+  <b>Task status:</b>
+  <%= @task.task_status %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @task.user %>
+</p>
+
+
+<%= link_to 'Edit', edit_task_path(@task) %> |
+<%= link_to 'Back', tasks_path %>

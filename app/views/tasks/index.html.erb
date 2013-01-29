@@ -1,0 +1,45 @@
+<h1>Listing tasks</h1>
+
+<table>
+  <tr>
+    <th>Task type</th>
+    <th>System</th>
+    <th>Description</th>
+    <th>Request date</th>
+    <th>Due date</th>
+    <th>Execution date</th>
+    <th>Assigned to</th>
+    <th>Customer</th>
+    <th>Follow up</th>
+    <th>Task priority</th>
+    <th>Task status</th>
+    <th>User</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tasks.each do |task| %>
+  <tr>
+    <td><%= task.task_type %></td>
+    <td><%= task.system %></td>
+    <td><%= task.description %></td>
+    <td><%= task.request_date %></td>
+    <td><%= task.due_date %></td>
+    <td><%= task.execution_date %></td>
+    <td><%= task.assigned_to %></td>
+    <td><%= task.customer %></td>
+    <td><%= task.follow_up %></td>
+    <td><%= task.task_priority %></td>
+    <td><%= task.task_status %></td>
+    <td><%= task.user %></td>
+    <td><%= link_to 'Show', task %></td>
+    <td><%= link_to 'Edit', edit_task_path(task) %></td>
+    <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Task', new_task_path %>

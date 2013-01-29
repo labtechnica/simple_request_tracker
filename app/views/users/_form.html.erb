@@ -1,0 +1,18 @@
+<%= simple_form_for(@user) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :email %>
+    <%= f.input :password_digest %>
+    <%= f.input :remember_me_token %>
+    <%= f.input :password_reset_token %>
+    <%= f.input :password_reset_sent_at %>
+    <%= f.association :profile %>
+    <%= f.input :status %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

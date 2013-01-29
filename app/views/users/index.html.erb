@@ -1,0 +1,37 @@
+<h1>Listing users</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Password digest</th>
+    <th>Remember me token</th>
+    <th>Password reset token</th>
+    <th>Password reset sent at</th>
+    <th>Profile</th>
+    <th>Status</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.name %></td>
+    <td><%= user.email %></td>
+    <td><%= user.password_digest %></td>
+    <td><%= user.remember_me_token %></td>
+    <td><%= user.password_reset_token %></td>
+    <td><%= user.password_reset_sent_at %></td>
+    <td><%= user.profile %></td>
+    <td><%= user.status %></td>
+    <td><%= link_to 'Show', user %></td>
+    <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New User', new_user_path %>

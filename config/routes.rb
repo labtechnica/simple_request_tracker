@@ -1,11 +1,13 @@
 RequestTracker::Application.routes.draw do
+  
+  root :to => 'tasks#index'
+  match '/signin',  to: 'sessions#new'
+  match '/signout', to: 'sessions#destroy', via: :delete
+  
   resources :tasks
-
-
-  resources :systems
-
-
+  resources :systems, except: [:delete]
   resources :users
+  resources :sessions, only:   [:index, :new, :create, :destroy]
 
 
   # The priority is based upon order of creation:

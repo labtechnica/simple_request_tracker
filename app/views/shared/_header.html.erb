@@ -1,0 +1,25 @@
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <i class="icon icon-reorder"></i> Menu
+      </a>
+      <a class="brand" href="<%= root_url %>">Request Tracker</a>
+      <% if signed_in? %>
+        <div class="nav-collapse">
+          <ul class="nav pull-right">
+            <li class="divider-vertical"></li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" href="#" data-toggle="dropdown">Welcome, <%= current_user.name %><strong class="caret"></strong></a>
+              <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
+                <a class="btn btn-success" href="<%= edit_user_path(current_user) %>">Settings</a>
+                <a class="btn btn-danger" href="<%= signout_path %>">Sign Out</a>
+                &nbsp;
+              </div>
+            </li>
+          </ul>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -13,5 +13,10 @@ class CreateUsers < ActiveRecord::Migration
       t.timestamps
     end
     add_index :users, :profile_id
+
+    user = User.new(name: 'Simple Tracker', email: 'simpletracker@gmail.com', profile_id: 1, password: 'stadmin', password_confirmation: 'stadmin')
+    user.save!
+    user.status = :Active
+    user.save!
   end
 end

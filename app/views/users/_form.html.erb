@@ -2,14 +2,16 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :email %>
-    <%= f.input :password_digest %>
-    <%= f.input :remember_me_token %>
-    <%= f.input :password_reset_token %>
-    <%= f.input :password_reset_sent_at %>
-    <%= f.association :profile %>
-    <%= f.input :status %>
+    <% if @user.new_record? %>
+      <%= f.input :name %>
+      <%= f.input :email %>
+      <%= f.association :profile %>
+    <% elsif @user == current_user %>
+      <%= f.input :name %>
+      <%= f.input :email, :disabled => true %>
+      <%= f.input :password %>
+      <%= f.input :password_confirmation, label: :Confirmation %>
+    <% end %>
   </div>
 
   <div class="form-actions">
